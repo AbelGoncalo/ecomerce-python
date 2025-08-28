@@ -24,3 +24,11 @@ O objetivo é criar um sistema simples de e-commerce com painel administrativo, 
    ```bash
    git clone https://github.com/AbelGoncalo/ecomerce-python.git
    cd ecomerce-python
+python -m venv venv
+source venv/bin/activate  # Linux/Mac
+venv\Scripts\activate     # Windows
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py createsuperuser
+python manage.py runserver
+http://127.0.0.1:8000/
