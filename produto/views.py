@@ -2,22 +2,22 @@ from django.shortcuts import render
 from django.views.generic.list import ListView
 from django.views import View
 from django.http import HttpResponse
+from . import  models
 
 
 class ListaProdutos(ListView):
-    def get(self, *args, **kwargs):
-        return HttpResponse('Listar')
-
+        model = models.Produto
+        template_name = 'produto/lista.html'    
 class DetalheProduto(View):
     def get(self, *args, **kwargs):
-        return HttpResponse('Detalhe')
+        return HttpResponse('Detalhe do carrinho')
 
 class AdicionarCarrinho(View):
     def get(self, *args, **kwargs):
-        return HttpResponse('Add')
+        return HttpResponse('Adiconar ao carrinho')
 class RemoverCarrinho(View):
     def get(self, *args, **kwargs):
-        return HttpResponse('REmover')
+        return HttpResponse('Remover')
 
 class Carrinho(View):
     def get(self, *args, **kwargs):
@@ -25,7 +25,7 @@ class Carrinho(View):
 
 class Finalizar(View):
     def get(self, *args, **kwargs):
-        return HttpResponse('Criar')
+        return HttpResponse('Finalizar carrinho')
 
 
 
